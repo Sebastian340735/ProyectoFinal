@@ -133,8 +133,8 @@ footer {
     }
 }
 
-@media (max-width: 500px) {
-    flex-direction: column;
+@media (max-width: 500px) 
+    { flex-direction: column;
     align-items: center; }
     .navbar-nav {
         justify-content: center;
