@@ -1,0 +1,212 @@
+// Variables de colores
+$color-fondo: rgb(233, 10, 10);
+$color-header: rgb(209, 212, 16);
+$color-footer: brown;
+$color-imagenfondo: aqua;
+$color-titulo: green;
+$color-imagenes: lightgreen;
+$color-imagenb: red;
+$color-imagenc: blue;
+$color-imagend: violet;
+$color-imagene: orange;
+$color-imagenf: grey;
+
+// Estilos globales
+body {
+    background-color: $color-fondo;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+// Header
+header {
+    background-color: $color-header;
+    padding: 10px 0;
+    
+    h1 {
+        text-align: center;
+        font-size: 2em;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+}
+
+// Navbar
+.navbar {
+    .navbar-nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+// Títulos principales
+h2 {
+    text-align: center;
+    margin: 10px 0;
+}
+
+// Main contenido
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    padding: 20px;
+
+    .tituloPrincipal {
+        grid-column: span 3;
+        background-color: $color-titulo;
+        padding: 20px;
+    }
+
+    .imagen {
+        background-color: $color-imagenes;
+        padding: 10px;
+        text-align: center;
+
+        img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+        }
+    }
+
+    .imagenb {
+        background-color: $color-imagenb;
+    }
+
+    .imagenc {
+        background-color: $color-imagenc;
+    }
+
+    .imagend {
+        background-color: $color-imagend;
+    }
+
+    .imagene {
+        background-color: $color-imagene;
+    }
+
+    .imagenf {
+        background-color: $color-imagenf;
+    }
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 500px) {
+        grid-template-columns: 1fr;
+        .tituloPrincipal {
+            grid-column: span 1;
+        }
+    }
+}
+
+// Footer
+footer {
+    background-color: $color-footer;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    
+    div {
+        margin: 10px;
+        
+        img {
+            width: 100px;
+            height: auto;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            
+            li {
+                img {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    flex-direction: column;
+    align-items: center; }
+    .navbar-nav {
+        justify-content: center;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0px 10px;
+    }
+
+    .navbar-collapse {
+        display: flex !important;
+    }
+}
+
+// Estilos para el grid de productos
+.productos {
+    display: grid;
+    grid-template-areas:
+        'tituloPrincipal tituloPrincipal tituloPrincipal'
+        'imagena imagenb imagenc'
+        'imagend imagene imagenf';
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 100px 300px 300px;
+    gap: 10px;
+    padding: 20px;
+
+    .tituloPrincipal {
+        grid-area: tituloPrincipal;
+        background-color: $color-titulo;
+        padding: 10px;
+    }
+
+    .imagen {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .imagena {
+        grid-area: imagena;
+        background-color: $color-imagenes;
+    }
+
+    .imagenb {
+        grid-area: imagenb;
+        background-color: $color-imagenb;
+    }
+
+    .imagenc {
+        grid-area: imagenc;
+        background-color: $color-imagenc;
+    }
+
+    .imagend {
+        grid-area: imagend;
+        background-color: $color-imagend;
+    }
+
+    .imagene {
+        grid-area: imagene;
+        background-color: $color-imagene;
+    }
+
+    .imagenf {
+        grid-area: imagenf;
+        background-color: $color-imagenf;
+    }
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 500px) {
+        grid-template-columns: 1fr;
+    }
+}
